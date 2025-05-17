@@ -26,7 +26,7 @@ Here is what they need to do today: ${taskText}.
 Suggest a gentle, prioritized plan to help them stay productive but not overwhelmed.`;
 
     try {
-      const res = await fetch("http://localhost:4000/api/chat", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
