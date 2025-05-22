@@ -8,12 +8,12 @@ export default function TaskInput({ taskText, setTaskText }) {
         What do you need to do today?
       </label>
       <textarea
-        rows={5}
-        value={taskText}
-        onChange={(e) => setTaskText(e.target.value)}
-        className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        placeholder="E.g. finish math homework, do laundry, apply to 2 jobs..."
-      />
+  className="w-full max-w-md p-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+  placeholder="E.g. finish math homework, do laundry, apply to 2 jobs..."
+  value={taskText}
+  onChange={(e) => setTaskText(e.target.value)}
+/>
+
     </div>
   );
 }
