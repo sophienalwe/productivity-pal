@@ -17,7 +17,7 @@
 To run locally:
 
 ```bash
-git clone https://github.com/your-username/productivity-pal.git
+git clone https://github.com/sophienalwe/productivity-pal.git
 cd productivity-pal
 npm install
 npm start 
