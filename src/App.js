@@ -110,9 +110,16 @@ function App() {
     setQuote(getMotivationalQuote(energy));
     setBreakSuggestion(getBreakSuggestion(energy));
 
-    const prompt = `The user has this energy level: ${energy}.
-Here is what they need to do today: ${taskText}.
-Suggest a gentle, prioritized plan to help them stay productive but not overwhelmed.`;
+    const prompt = `You are a supportive, calm executive-function coach. The user feels overwhelmed and has a current energy capacity level of "${energy}". 
+
+    Here is their raw brain-dump text of things to handle: "${taskText}".
+    
+    Break this dump down into a beautifully structured, highly prioritized, sequential path. 
+    Guidelines:
+    - Do not list things concurrently. Group tasks chronologically into hyper-focused 15-to-30 minute segments.
+    - Keep the language deeply encouraging, warm, and zero-pressure. 
+    - Use brief markdown bolding for primary execution targets. 
+    - Build specific, organic breather windows directly into the roadmap timeline corresponding to their chosen energy level.`;
 
     try {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/api/chat`, {
@@ -140,8 +147,8 @@ Suggest a gentle, prioritized plan to help them stay productive but not overwhel
 
   // 🎨 UI Layout
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-2xl bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 space-y-6">
+    <div className="min-h-screen w-full bg-gradient-to-tr from-slate-50 via-indigo-50/30 to-rose-50/20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center px-4 py-12 font-sans antialiased text-slate-800 dark:text-slate-200">
+      <div className="w-full max-w-xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl rounded-[32px] border border-white/40 dark:border-slate-800/50 shadow-2xl shadow-slate-200/50 dark:shadow-none p-8 md:p-10 space-y-8 transition-all duration-500">
         {/* Header & theme toggle */}
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold text-blue-700 dark:text-blue-300">

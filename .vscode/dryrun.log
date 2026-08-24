@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/sophienalweyiso/productivity-pal'
+make: Leaving directory `/Users/sophienalweyiso/productivity-pal'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
