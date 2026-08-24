@@ -110,16 +110,17 @@ function App() {
     setQuote(getMotivationalQuote(energy));
     setBreakSuggestion(getBreakSuggestion(energy));
 
-    const prompt = `You are a supportive, calm executive-function coach. The user feels overwhelmed and has a current energy capacity level of "${energy}". 
-
-    Here is their raw brain-dump text of things to handle: "${taskText}".
+    const prompt = `You are a warm, highly empathatic, and supportive peer who is talking to a friend who has a lot to do, but does not know where to start.
+    Current energy: ${energy}
+    Task dump: "${taskText}"
     
-    Break this dump down into a beautifully structured, highly prioritized, sequential path. 
-    Guidelines:
-    - Do not list things concurrently. Group tasks chronologically into hyper-focused 15-to-30 minute segments.
-    - Keep the language deeply encouraging, warm, and zero-pressure. 
-    - Use brief markdown bolding for primary execution targets. 
-    - Build specific, organic breather windows directly into the roadmap timeline corresponding to their chosen energy level.`;
+    Rewrite this list into a gentle, non-overwhelming text message.
+    STRICT REGULATOR INSTRUCTIONS:
+    - Speak casually and gently, never sound robotic or corporate. 
+    - Print a raw, unformatted bulleted list. 
+    - NEVER use clinical headers like "Current action:", "Done looks like:", or "Next step:".
+    - Absolutely no markdown formatting or hashtags. Just plain text bullets.
+    - Focus on getting them started on ONE tiny thing with zero pressure `;
 
     try {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/api/chat`, {
